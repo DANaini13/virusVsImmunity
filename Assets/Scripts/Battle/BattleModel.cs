@@ -66,11 +66,9 @@ class ModelMessageWrapper
             argList[i] = parseArg(arg);
             ++i;
         }
-        Debug.Log(battleModel);
-        Debug.Log(methodInfo);
-        methodInfo.Invoke(battleModel, argList); }
-
-        private object parseArg(PlayerArg arg) {
+        methodInfo.Invoke(battleModel, argList); 
+    }
+    private object parseArg(PlayerArg arg) {
         switch (arg.type) {
             case "int": return int.Parse(arg.value);
             case "string": return arg.value;
