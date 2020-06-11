@@ -11,14 +11,17 @@ public class NetLogic : MonoBehaviour
 
     public void Init(uint connId)
     {
+        // Rpc.Inst.RegistRpc(Tcp.Player.Inst);
+        // NetLogic.Inst.Init(Tcp.Player.Inst.m_connId);
         svr.Connect(SvrRelayIp, 9999, (err, str) => {
             if (err == 0) {
                 var firstMsg = new byte[4]; NetBuffer.WriteUInt32ToBuffer(connId, firstMsg, 0);
                 svr.SendBuf(firstMsg); //首包，上报connId
-                svr.SetDisconnectCallback((_) => { Tcp.Event.Add(Tcp.Event.Type.Disconnect_relay); });
             } else {
                 Debug.LogError(str);
             }
+
+            
         });
     }
     public void CallRpc(int pid, RpcEnum rid, ParseParam func) {

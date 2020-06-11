@@ -14,6 +14,7 @@ class ModelMessageWrapper
 
     public void doTest() 
     {
+        Debug.Log("do Test");
         PlayerArg playerArg0 = new PlayerArg("int", "100");
         PlayerArg playerArg1 = new PlayerArg("vector2", (new vector2(0.1m, 5.0m)).ToString());
         List<PlayerArg> argList = new List<PlayerArg>();
@@ -45,6 +46,7 @@ class ModelMessageWrapper
             case "int": return int.Parse(arg.value);
             case "string": return arg.value;
             case "vector2": return vector2.fromString(arg.value);
+            case "decimal": return decimal.Parse(arg.value);
         }
         return 0;
     }
