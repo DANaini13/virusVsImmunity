@@ -1,4 +1,5 @@
-﻿namespace BattleMath
+﻿using UnityEngine;
+namespace BattleMath
 {
     struct vector2 
     { 
@@ -35,6 +36,10 @@
         public string ToString()
         {
             return x + "-" + y;
+        }
+        public Vector2 toVec2() 
+        {
+            return new Vector2((float) x, (float) y);
         }
     }
 }

@@ -9,9 +9,15 @@ abstract class Player
     protected decimal speed;
     public abstract void move(vector2 direction);
     public abstract void implementTask(int key);
+    public vector2 getLocation() {return location;}
+    public void setLocation(vector2 pos) {location = pos;}
 } 
 class Macrophages: Player
 {
+    public Macrophages(vector2 location)
+    {
+        this.location = location;
+    }
     public override void implementTask(int key)
     {
     }

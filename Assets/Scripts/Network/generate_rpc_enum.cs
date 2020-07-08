@@ -131,5 +131,7 @@ public enum RpcEnum: ushort {
     Rpc_client_notify_addr = 324,
     Rpc_client_nat_result = 325,
     Rpc_client_event = 326,
-    RpcEnumCnt = 327,
+	Rpc_relay_lockstep_begin = 327,
+	Rpc_relay_lockstep_end = 328,
+    RpcEnumCnt = 329,
 }
