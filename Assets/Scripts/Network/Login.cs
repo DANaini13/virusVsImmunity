@@ -11,13 +11,13 @@ public class NetLogic : MonoBehaviour
 
     public void Init(uint connId)
     {
-        svr.Connect(SvrRelayIp, 9999, (err, str) => {
+        svr.Connect(SvrRelayIp, 7111, (err, str) => {
             if (err == 0) {
                 var firstMsg = new byte[4]; 
                 NetBuffer.WriteUInt32ToBuffer(connId, firstMsg, 0);
                 svr.SendBuf(firstMsg); //首包，上报connId
             } else {
-                //Debug.LogError(str);
+                Debug.LogError(str);
             }
         });
     }

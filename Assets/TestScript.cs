@@ -8,8 +8,6 @@ public class TestScript : MonoBehaviour
         BattleModel model = new BattleModel();
         ModelMessageWrapper wrapper = new ModelMessageWrapper(model);
         wrapper.doTest();
-        NetLogic.Inst.Init(0);
-
     }
 
     // Update is called once per frame
